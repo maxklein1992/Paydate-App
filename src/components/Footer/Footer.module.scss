@@ -1,0 +1,30 @@
+@import "../../../styles/mediaQuery";
+@import "../../../styles/pxToRem";
+
+.footer {
+  background: linear-gradient(
+    90deg,
+    var(--colorPrimaryRed),
+    var(--colorPrimaryPink)
+  );
+  position: relative;
+  padding: pxToRem(24) 0;
+
+  @include mediaQuery(m, up) {
+    padding: pxToRem(54);
+  }
+
+  // Payoff
+  p {
+    color: var(--colorPrimaryWhite);
+    font-size: pxToRem(16);
+    line-height: pxToRem(36);
+    text-align: center;
+    width: 100%;
+
+    @include mediaQuery(m, up) {
+      font-size: pxToRem(24);
+      line-height: pxToRem(32);
+    }
+  }
+}

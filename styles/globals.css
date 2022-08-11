@@ -2,8 +2,9 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: var(--fontFamilyBody);
+  box-sizing: border-box;
+  /* line-height: $default-line-spacing; */
 }
 
 a {
@@ -11,16 +12,36 @@ a {
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+ul,
+ol {
+  list-style: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+:root {
+  /** BREAKPOINTS */
+  --breakpointXs: 320px;
+  --breakpointS: 768px;
+  --breakpointM: 1024px;
+  --breakpointL: 1240px;
+  --breakpointXl: 1440px;
+
+  /** COLORS */
+  /* Colors: Primary */
+  --colorPrimaryBlack: #000000;
+  --colorPrimaryGray: #4a4843;
+  --colorPrimaryBlue: #0071b2;
+  --colorPrimaryWhite: #ffffff;
+  --colorPrimaryRed: #f65a83;
+  --colorPrimaryPink: #ff87b2;
+  --colorPrimaryYellow: #ffe898;
+  --colorPrimaryOrange: #f98708;
+
+  /* Colors: Primary */
+  --colorSecondaryYellow: #fff8bc;
+
+  /** FONTS */
+  /* Font-family */
+  --fontFamilyBody: "Roboto", sans-serif;
+  --fontFamilyButton: "The Sans", "Helvetica", "Arial", sans-serif;
+  --fontFamilyTitles: "Roboto", sans-serif;
 }

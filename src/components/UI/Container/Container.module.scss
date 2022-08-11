@@ -1,0 +1,25 @@
+@import "../../../../styles/mediaQuery";
+@import "../../../../styles/pxToRem";
+
+.container {
+  margin: 0 pxToRem(16);
+  position: relative;
+
+  @include mediaQuery(s, only) {
+    margin: 0 pxToRem(24);
+  }
+
+  @include mediaQuery(m, only) {
+    margin: 0 auto;
+    max-width: pxToRem(960);
+  }
+
+  @include mediaQuery(l, only) {
+    margin: 0 pxToRem(80);
+  }
+
+  @include mediaQuery(xl, only) {
+    margin: 0 auto;
+    max-width: pxToRem(1288);
+  }
+}

@@ -1,0 +1,88 @@
+@import "../../../../styles/mediaQuery";
+@import "../../../../styles/pxToRem";
+
+/* Default styling */
+.button {
+  align-items: center;
+  appearance: none;
+  background-color: transparent;
+  border-radius: pxToRem(6);
+  border: 1px solid transparent;
+  box-shadow: 0 1px 1px 0 rgb(0 0 0 / 14%), 0 2px 1px -1px rgb(0 0 0 / 12%),
+    0 1px 3px 0 rgb(0 0 0 / 20%);
+  color: var(--colorPrimaryBlack);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: var(--fontFamilyButton);
+  font-size: pxToRem(18);
+  font-weight: bold;
+  height: pxToRem(50);
+  justify-content: flex-start;
+  line-height: 1;
+  overflow: hidden;
+  padding: 0 pxToRem(20);
+  position: relative;
+  vertical-align: top;
+  width: auto;
+}
+
+/* Background variants */
+.primary {
+  color: var(--colorPrimaryWhite);
+  background-color: var(--colorPrimaryRed);
+}
+
+.secondary {
+  background-color: var(--colorPrimaryYellow);
+}
+
+.fullWidth {
+  justify-content: center;
+  width: 100%;
+}
+
+/* Height variants */
+.small {
+  height: pxToRem(40);
+}
+
+/* Hover states */
+.primary:hover {
+  background-color: var(--colorPrimaryPink);
+}
+
+.secondary:hover {
+  background-color: var(--colorSecondaryYellow);
+}
+
+.button:hover {
+  box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 2px 2px -1px rgb(0 0 0 / 40%),
+    0 2px 4px 0 rgb(0 0 0 / 20%);
+}
+
+/* Active states */
+.primary:active {
+  background-color: var(--colorPrimaryPink);
+}
+
+.secondary:active {
+  background-color: var(--colorSecondaryYellow);
+}
+
+/* Focus states */
+.button:focus {
+  outline: none;
+}
+
+.primary:focus {
+  background-color: var(--colorPrimaryPink);
+}
+
+.secondary:focus {
+  background-color: var(--colorSecondaryYellow);
+}
+
+.primary:focus,
+.secondary:focus {
+  box-shadow: 0 0 8px 1px var(--colorPrimaryBlue);
+}

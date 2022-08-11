@@ -1,0 +1,56 @@
+@import "../../../../styles/mediaQuery";
+@import "../../../../styles/pxToRem";
+
+.grid {
+  display: grid;
+  padding: 0;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 16px 16px; //row, column
+
+  @include mediaQuery(s, up) {
+    gap: 16px 16px;
+  }
+
+  @include mediaQuery(m, up) {
+    gap: 24px 24px;
+  }
+
+  @include mediaQuery(l, up) {
+    gap: 32px 24px;
+  }
+
+  @include mediaQuery(xl, up) {
+    gap: 32px 32px;
+  }
+}
+
+.column {
+  grid-column: auto / span 12;
+
+  @include mediaQuery(m, up) {
+    padding: pxToRem(10) pxToRem(8) pxToRem(9);
+    min-height: pxToRem(48);
+  }
+
+  @include mediaQuery(s, up) {
+    grid-column: auto / span 6;
+  }
+
+  @include mediaQuery(m, up) {
+    grid-column: auto / span 4;
+  }
+}
+
+.item {
+  position: relative;
+  align-items: center;
+  border-bottom: 1px solid var(--colorPrimaryBlack);
+  padding: pxToRem(4) pxToRem(6) pxToRem(4);
+  background-color: var(--colorPrimaryRed);
+  color: var(--colorPrimaryWhite);
+  font-size: 14px;
+
+  &:hover {
+    background-color: var(--colorPrimaryPink);
+  }
+}

@@ -1,0 +1,13 @@
+@import "../../../styles/mediaQuery";
+@import "../../../styles/pxToRem";
+
+.title {
+  color: var(--colorPrimaryRed);
+  font-weight: 800;
+  padding-bottom: pxToRem(18);
+  border-bottom: pxToRem(1) solid var(--colorPrimaryRed);
+}
+
+.description {
+  margin-top: pxToRem(32);
+}

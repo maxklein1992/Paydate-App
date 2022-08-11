@@ -1,0 +1,7 @@
+@import "../../../styles/mediaQuery";
+@import "../../../styles/pxToRem";
+
+.container {
+  font-family: var(--fontFamilyBody);
+  position: relative;
+}
