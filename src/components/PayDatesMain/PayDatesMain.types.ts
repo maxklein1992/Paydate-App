@@ -9,11 +9,19 @@ export interface Props {
    */
   bonusDates?: BonusDate[] | undefined;
   /**
-   * Short description about no bonus dates left
+   * Text
+   */
+  bonusPaymentDates: string;
+  /**
+   * Text
+   */
+  downloadExcel: string;
+  /**
+   * Text
    */
   noBonusDatesLeft: string;
   /**
-   * Short description about no salary dates left
+   * Text
    */
   noSalaryDatesLeft: string;
   /**
@@ -24,4 +32,8 @@ export interface Props {
    * Array of base salary payment dates
    */
   salaryDates?: SalaryDate[] | undefined;
+  /**
+   * Text
+   */
+  salaryPaymentDates: string;
 }

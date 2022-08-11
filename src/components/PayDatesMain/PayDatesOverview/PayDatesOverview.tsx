@@ -59,6 +59,7 @@ const PayDatesOverview = ({ payDates }: Props) => {
       key={i}
       ref={refItems.current[i]}
       onKeyDown={handleKeyboardSupport}
+      role="presentation"
     >
       <h2>{`${payDateItem.bonusDate} ${payDateItem.month}`}</h2>
     </div>
@@ -74,6 +75,7 @@ const PayDatesOverview = ({ payDates }: Props) => {
       key={i}
       ref={refItems.current[i]}
       onKeyDown={handleKeyboardSupport}
+      role="presentation"
     >
       <h2>{`${payDateItem.salaryDate} ${payDateItem.month}`}</h2>
     </div>

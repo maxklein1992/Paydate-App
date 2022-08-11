@@ -57,8 +57,7 @@ const Home: NextPage = () => {
           bonusDates={bonusDates}
           payDates={payDates}
           salaryDates={salaryDates}
-          noBonusDatesLeft={payDatesData.noBonusDatesLeft}
-          noSalaryDatesLeft={payDatesData.noSalaryDatesLeft}
+          {...payDatesData}
         />
       </Layout>
     </div>

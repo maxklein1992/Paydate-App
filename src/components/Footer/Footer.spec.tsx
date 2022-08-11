@@ -1,18 +1,18 @@
 import React from "react";
-import { render } from "../../../test/testUtils";
 
+import { render } from "@testing-library/react";
 import Footer from "./Footer";
-import { Props } from "./Footer.types";
+import type { Props } from "./Footer.types";
 
 export const mockData: Props = {
   payOff: "Payoff",
 };
 
 describe("<Footer>", () => {
-  it("should render a payoff description", () => {
+  it("should render a payoff", () => {
     const { queryByText } = render(<Footer {...mockData} />);
 
-    const description = queryByText(mockData.payOff);
-    expect(description).toBeTruthy();
+    const payOff = queryByText(mockData.payOff);
+    expect(payOff).toBeTruthy();
   });
 });
