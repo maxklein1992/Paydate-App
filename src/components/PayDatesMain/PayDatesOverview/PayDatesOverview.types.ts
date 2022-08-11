@@ -15,7 +15,7 @@ export interface SalaryDate {
    */
   salaryDate: number;
   /**
-   * Payment type
+   * Salary type
    */
   variant: "salary" | "bonus";
 }
@@ -30,7 +30,7 @@ export interface BonusDate {
    */
   month: string;
   /**
-   * Payment type
+   * Salary type
    */
   variant: "salary" | "bonus";
 }

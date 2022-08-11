@@ -1,12 +1,8 @@
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 import React from "react";
 import { ReactElement } from "react";
 import { render, RenderOptions } from "@testing-library/react";
 
 import "./styles/global.css";
-import "./styles/minireset.css";
-import "./styles/themes/theme_cz.css";
 
 // @ts-ignore
 const AllTheProviders = ({ children }) => {
