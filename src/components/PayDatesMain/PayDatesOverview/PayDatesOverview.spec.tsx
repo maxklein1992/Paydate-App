@@ -39,15 +39,17 @@ describe("<PayDatesOverview>", () => {
     expect(navAccountItems).toHaveLength(mockData.payDates.length);
   });
 
-  it("should render a title", () => {
-    const { getByText } = render(<PayDatesOverview {...mockData} />);
-    const firstTitle = getByText("15 September");
+  it("should render month and day", () => {
+    const { getByText, getAllByText } = render(
+      <PayDatesOverview {...mockData} />
+    );
+    const month = getByText(`Month: ${mockData.payDates[0].month}`);
 
-    expect(firstTitle).toBeTruthy;
+    expect(month).toBeTruthy;
 
-    const secondTitle = getByText("15 October");
+    const day = getAllByText("15");
 
-    expect(secondTitle).toBeTruthy;
+    expect(day).toBeTruthy;
   });
 
   it("supports keyboard events", async () => {
