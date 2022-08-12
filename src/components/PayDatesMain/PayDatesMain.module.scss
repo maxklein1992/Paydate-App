@@ -1,3 +1,15 @@
+@import "../../../styles/variables";
+
+.header {
+  color: $colorPrimaryWhite;
+}
+
 .downloadLink {
-  color: var(--colorPrimaryPink);
+  color: $colorPrimaryWhite;
+  border-bottom: 4px solid transparent;
+  width: max-content;
+
+  &:hover {
+    border-color: $colorPrimaryWhite;
+  }
 }

@@ -1,12 +1,10 @@
-@import "../mediaquery";
+@import "../../../styles/mediaquery";
 @import "../../../styles/pxToRem";
+@import "../../../styles/variables";
 
 .footer {
-  background: linear-gradient(
-    90deg,
-    var(--colorPrimaryRed),
-    var(--colorPrimaryPink)
-  );
+  background-color: $colorPrimaryBlack;
+  border-top: pxToRem(2) solid $colorPrimaryWhite;
   position: relative;
   padding: pxToRem(24) 0;
 
@@ -16,7 +14,7 @@
 
   // Payoff
   p {
-    color: var(--colorPrimaryWhite);
+    color: $colorPrimaryWhite;
     font-size: pxToRem(16);
     line-height: pxToRem(36);
     text-align: center;

@@ -1,13 +1,14 @@
-@import "../mediaQuery";
+@import "../../../styles/mediaQuery";
 @import "../../../styles/pxToRem";
+@import "../../../styles/variables";
 
 .title {
-  color: var(--colorPrimaryRed);
+  color: $colorPrimaryWhite;
   font-weight: 800;
-  padding-bottom: pxToRem(18);
-  border-bottom: pxToRem(1) solid var(--colorPrimaryRed);
 }
 
 .description {
+  color: $colorPrimaryWhite;
+  font-size: pxToRem(16);
   margin-top: pxToRem(32);
 }

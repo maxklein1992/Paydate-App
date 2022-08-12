@@ -1,5 +1,6 @@
-@import "../../mediaQuery";
+@import "../../../../styles/mediaQuery";
 @import "../../../../styles/pxToRem";
+@import "../../../../styles/variables";
 
 .grid {
   display: grid;
@@ -44,13 +45,30 @@
 .item {
   position: relative;
   align-items: center;
-  border-bottom: 1px solid var(--colorPrimaryBlack);
-  padding: pxToRem(4) pxToRem(6) pxToRem(4);
-  background-color: var(--colorPrimaryRed);
-  color: var(--colorPrimaryWhite);
-  font-size: 14px;
+  border-bottom: pxToRem(6) solid $colorPrimaryGreen;
+  padding: pxToRem(4) pxToRem(6) pxToRem(4) pxToRem(0);
+  margin: 0 !important;
+  background-color: transparent;
+}
 
-  &:hover {
-    background-color: var(--colorPrimaryPink);
-  }
+.itemMonth {
+  position: absolute;
+  color: $colorPrimaryWhite;
+  font-size: pxToRem(12) !important;
+  top: 0;
+  line-height: 0;
+  font-weight: bold;
+  left: 0;
+}
+
+.itemIcon {
+  position: absolute;
+  color: $colorPrimaryWhite;
+  top: 0;
+  right: 0;
+}
+
+.itemDay {
+  font-size: pxToRem(26) !important;
+  color: $colorPrimaryGreen;
 }

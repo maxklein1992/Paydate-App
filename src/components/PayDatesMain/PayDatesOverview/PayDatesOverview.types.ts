@@ -1,3 +1,5 @@
+import { SalaryType } from "../calculatePayDates";
+
 export interface Props {
   /**
    * Array of payment dates
@@ -32,7 +34,7 @@ export interface SalaryDate {
   /**
    * Salary type
    */
-  variant: "salary" | "bonus";
+  variant: SalaryType.Salary | SalaryType.Bonus;
 }
 
 export interface BonusDate {
@@ -47,7 +49,7 @@ export interface BonusDate {
   /**
    * Salary type
    */
-  variant: "salary" | "bonus";
+  variant: SalaryType.Salary | SalaryType.Bonus;
 }
 
 export interface PayDate {

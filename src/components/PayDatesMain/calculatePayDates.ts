@@ -1,20 +1,12 @@
 import { getLastWorkingDayInMonth } from "./getLastWorkingDayInMonth";
 import getMonthName from "../../utils/getMonthName/getMonthName";
+import isWeekday from "../../utils/isWeekday/isWeekday";
+import isSaturday from "../../utils/isSaturday/isSaturday";
 
 export enum SalaryType {
   Salary = "salary",
   Bonus = "bonus",
 }
-
-/**
- * Checks whether the date is a weekday
- */
-const isWeekday = (date: Date) => date.getDay() !== 6 && date.getDay() !== 0; // 6 = Saturday, 0 = Sunday
-
-/**
- * Checks whether the date is a saturday
- */
-const isSaturday = (date: Date) => date.getDay() === 6; // 6 = Saturday, 0 = Sunday
 
 /**
  * Creates an array of payment days for salary and bonus for the remaining months of the year
@@ -47,7 +39,7 @@ export const calculatePayDates = (date: Date, salaryType: SalaryType) => {
         payDates.push({
           salaryDate: lastWorkingDay!.getDate(),
           month: getMonthName(new Date(lastWorkingDay!)),
-          variant: "salary",
+          variant: SalaryType.Salary,
         });
     }
   } else {
@@ -67,15 +59,23 @@ export const calculatePayDates = (date: Date, salaryType: SalaryType) => {
       const bonusDay = isWeekday(fifteenthDay)
         ? fifteenthDay
         : isSaturday(fifteenthDay)
-        ? new Date(fifteenthDay.getFullYear(), fifteenthDay.getMonth(), 19)
-        : new Date(fifteenthDay.getFullYear(), fifteenthDay.getMonth(), 18);
+        ? new Date(
+            fifteenthDay.getFullYear(),
+            fifteenthDay.getMonth(),
+            fifteenthDay.getDate() + 4
+          )
+        : new Date(
+            fifteenthDay.getFullYear(),
+            fifteenthDay.getMonth(),
+            fifteenthDay.getDate() + 3
+          );
 
       // If pay date is in the past, the pay date should not be shown
       bonusDay >= date &&
         payDates.push({
           bonusDate: bonusDay.getDate(),
           month: getMonthName(new Date(bonusDay!)),
-          variant: "bonus",
+          variant: SalaryType.Bonus,
         });
     }
   }

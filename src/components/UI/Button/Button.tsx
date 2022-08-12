@@ -19,9 +19,6 @@ const DsButton = ({
   // Defensive
   if (typeof children !== "string" || !children) return null;
 
-  // Classes to apply
-  // @todo: research in optimizing class assignment
-  // https://betterprogramming.pub/using-css-modules-with-react-in-2020-73c2223f495c
   const classNames = [
     fullWidth ? styles.fullWidth : "",
     loading ? styles.loading : "",

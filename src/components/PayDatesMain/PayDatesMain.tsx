@@ -1,7 +1,6 @@
 import { CSVLink } from "react-csv";
 import React from "react";
 
-import Container from "../UI/Container/Container";
 import PayDatesOverview from "./PayDatesOverview/PayDatesOverview";
 import styles from "./PayDatesMain.module.scss";
 import type { Props } from "./PayDatesMain.types";
@@ -26,14 +25,14 @@ const PayDatesMain = ({
   ];
 
   return (
-    <Container as="section">
-      <h2>{salaryPaymentDates}</h2>
+    <div>
+      <h4 className={styles.header}>{salaryPaymentDates}</h4>
       {salaryDates ? (
         <PayDatesOverview payDates={salaryDates} />
       ) : (
         <p>{noSalaryDatesLeft}</p>
       )}
-      <h2>{bonusPaymentDates}</h2>
+      <h4 className={styles.header}>{bonusPaymentDates}</h4>
       {bonusDates ? (
         <PayDatesOverview payDates={bonusDates} />
       ) : (
@@ -45,10 +44,10 @@ const PayDatesMain = ({
           headers={headers}
           filename={"payment-dates-report.csv"}
         >
-          <h1 className={styles.downloadLink}>{downloadExcel}</h1>
+          <h4 className={styles.downloadLink}>{downloadExcel}</h4>
         </CSVLink>
       )}
-    </Container>
+    </div>
   );
 };
 

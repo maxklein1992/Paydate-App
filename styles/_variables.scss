@@ -1,0 +1,41 @@
+@font-face {
+  font-family: "Poppins";
+  src: url("../public/assets/Poppins-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("../public/assets/Poppins-Bold.ttf");
+  font-weight: 800;
+  font-style: bold;
+}
+
+/** BREAKPOINTS */
+$breakpointXs: 320px;
+$breakpointS: 768px;
+$breakpointM: 1024px;
+$breakpointL: 1240px;
+$breakpointXl: 1440px;
+
+/** COLORS */
+/* Colors: Primary */
+$colorPrimaryBlack: #0e122b;
+$colorPrimaryGray: #4a4843;
+$colorPrimaryBlue: #0071b2;
+$colorPrimaryWhite: #ffffff;
+$colorPrimaryGreen: #0a8791;
+$colorPrimaryRed: #f65a83;
+$colorPrimaryPink: #ff87b2;
+$colorPrimaryYellow: #ffe898;
+$colorPrimaryOrange: #f98708;
+
+/* Colors: Primary */
+$colorSecondaryYellow: #fff8bc;
+
+/** FONTS */
+/* Font-family */
+$fontFamilyBody: "Poppins", normal;
+$fontFamilyButton: "The Sans", "Helvetica", "Arial", sans-serif;
+$fontFamilyTitles: "Poppins", normal;

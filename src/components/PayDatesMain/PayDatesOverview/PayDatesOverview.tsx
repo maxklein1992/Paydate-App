@@ -3,6 +3,8 @@ import React from "react";
 
 import styles from "./PayDatesOverview.module.scss";
 import type { BonusDate, SalaryDate, Props } from "./PayDatesOverview.types";
+import { SalaryType } from "../calculatePayDates";
+import LocalAtmIcon from "@mui/icons-material/LocalAtm";
 
 const PayDatesOverview = ({ payDates }: Props) => {
   const refItems = useRef(payDates!.map(() => createRef<HTMLDivElement>()));
@@ -56,12 +58,14 @@ const PayDatesOverview = ({ payDates }: Props) => {
     <div
       tabIndex={0}
       className={styles.item}
-      key={i}
+      key={payDateItem.month}
       ref={refItems.current[i]}
       onKeyDown={handleKeyboardSupport}
       role="presentation"
     >
-      <h2>{`${payDateItem.bonusDate} ${payDateItem.month}`}</h2>
+      <p className={styles.itemMonth}>{`Month: ${payDateItem.month}`}</p>
+      <LocalAtmIcon className={styles.itemIcon} />
+      <h4 className={styles.itemDay}>{payDateItem.bonusDate}</h4>
     </div>
   );
 
@@ -72,20 +76,22 @@ const PayDatesOverview = ({ payDates }: Props) => {
     <div
       tabIndex={0}
       className={styles.item}
-      key={i}
+      key={payDateItem.month}
       ref={refItems.current[i]}
       onKeyDown={handleKeyboardSupport}
       role="presentation"
     >
-      <h2>{`${payDateItem.salaryDate} ${payDateItem.month}`}</h2>
+      <p className={styles.itemMonth}>{`Month: ${payDateItem.month}`}</p>
+      <LocalAtmIcon className={styles.itemIcon} />
+      <h4 className={styles.itemDay}>{payDateItem.salaryDate}</h4>
     </div>
   );
 
   return (
     <ul className={styles.grid}>
       {payDates.map((payDateItem, i) => (
-        <li key={i} className={styles.column}>
-          {payDateItem.variant === "salary"
+        <li key={payDateItem.month} className={styles.column}>
+          {payDateItem.variant === SalaryType.Salary
             ? renderSalaryDateItem(payDateItem as SalaryDate, i)
             : renderBonusDateItem(payDateItem as BonusDate, i)}
         </li>

@@ -1,14 +1,6 @@
 import getLastDayOfMonth from "../../utils/getLastDayOfMonth/getLastDayOfMonth";
-
-/**
- * Checks whether the date is a weekday
- */
-const isWeekday = (date: Date) => date.getDay() !== 6 && date.getDay() !== 0; // 6 = Saturday, 0 = Sunday
-
-/**
- * Checks whether the date is a saturday
- */
-const isSaturday = (date: Date) => date.getDay() === 6; // 6 = Saturday, 0 = Sunday
+import isSaturday from "../../utils/isSaturday/isSaturday";
+import isWeekday from "../../utils/isWeekday/isWeekday";
 
 /**
  * Provides the last working day in a month

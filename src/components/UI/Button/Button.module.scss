@@ -1,5 +1,6 @@
-@import "../..//mediaQuery";
+@import "../../../../styles/mediaQuery";
 @import "../../../../styles/pxToRem";
+@import "../../../../styles/variables";
 
 /* Default styling */
 .button {
@@ -10,10 +11,10 @@
   border: 1px solid transparent;
   box-shadow: 0 1px 1px 0 rgb(0 0 0 / 14%), 0 2px 1px -1px rgb(0 0 0 / 12%),
     0 1px 3px 0 rgb(0 0 0 / 20%);
-  color: var(--colorPrimaryBlack);
+  color: $colorPrimaryBlack;
   cursor: pointer;
   display: inline-flex;
-  font-family: var(--fontFamilyButton);
+  font-family: $fontFamilyButton;
   font-size: pxToRem(18);
   font-weight: bold;
   height: pxToRem(50);
@@ -28,12 +29,12 @@
 
 /* Background variants */
 .primary {
-  color: var(--colorPrimaryWhite);
-  background-color: var(--colorPrimaryRed);
+  color: $colorPrimaryWhite;
+  background-color: $colorPrimaryRed;
 }
 
 .secondary {
-  background-color: var(--colorPrimaryYellow);
+  background-color: $colorPrimaryYellow;
 }
 
 .fullWidth {
@@ -48,11 +49,11 @@
 
 /* Hover states */
 .primary:hover {
-  background-color: var(--colorPrimaryPink);
+  background-color: $colorPrimaryPink;
 }
 
 .secondary:hover {
-  background-color: var(--colorSecondaryYellow);
+  background-color: $colorSecondaryYellow;
 }
 
 .button:hover {
@@ -62,11 +63,11 @@
 
 /* Active states */
 .primary:active {
-  background-color: var(--colorPrimaryPink);
+  background-color: $colorPrimaryPink;
 }
 
 .secondary:active {
-  background-color: var(--colorSecondaryYellow);
+  background-color: $colorSecondaryYellow;
 }
 
 /* Focus states */
@@ -75,14 +76,14 @@
 }
 
 .primary:focus {
-  background-color: var(--colorPrimaryPink);
+  background-color: $colorPrimaryPink;
 }
 
 .secondary:focus {
-  background-color: var(--colorSecondaryYellow);
+  background-color: $colorSecondaryYellow;
 }
 
 .primary:focus,
 .secondary:focus {
-  box-shadow: 0 0 8px 1px var(--colorPrimaryBlue);
+  box-shadow: 0 0 8px 1px $colorPrimaryBlue;
 }
