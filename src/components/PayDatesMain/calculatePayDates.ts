@@ -1,5 +1,5 @@
 import { getLastWorkingDayInMonth } from "./getLastWorkingDayInMonth";
-import getMonthName from "@utils/getMonthName/getMonthName";
+import getMonthName from "../../utils/getMonthName/getMonthName";
 
 export enum SalaryType {
   Salary = "salary",
@@ -17,7 +17,7 @@ const isWeekday = (date: Date) => date.getDay() !== 6 && date.getDay() !== 0; //
 const isSaturday = (date: Date) => date.getDay() === 6; // 6 = Saturday, 0 = Sunday
 
 /**
- * Creates an array of payment days for salary or bonus for the remaining months of the year
+ * Creates an array of payment days for salary and bonus for the remaining months of the year
  *
  * For Salary:
  * Paid on last working day of the month
@@ -29,23 +29,21 @@ const isSaturday = (date: Date) => date.getDay() === 6; // 6 = Saturday, 0 = Sun
  * @returns Array of payment dates for the remaining months of the year
  */
 
-export const calculatePayDates = (salaryType: SalaryType) => {
-  const today = new Date();
-
+export const calculatePayDates = (date: Date, salaryType: SalaryType) => {
   let payDates = [];
 
   if (salaryType === SalaryType.Salary) {
     // Salary
 
     // Retrieves all remaining salary pay dates of remaining of the year
-    for (let i = 0; i < 12 - today.getMonth(); i++) {
+    for (let i = 0; i < 12 - date.getMonth(); i++) {
       // Last working day of the month
       const lastWorkingDay = getLastWorkingDayInMonth(
-        new Date(today.getFullYear(), today.getMonth() + i)
+        new Date(date.getFullYear(), date.getMonth() + i)
       );
 
       // If pay date is in the past, the pay date should not be shown
-      lastWorkingDay! >= today &&
+      lastWorkingDay! >= date &&
         payDates.push({
           salaryDate: lastWorkingDay!.getDate(),
           month: getMonthName(new Date(lastWorkingDay!)),
@@ -56,15 +54,15 @@ export const calculatePayDates = (salaryType: SalaryType) => {
     // Bonus
 
     // Retrieves all remaining bonus pay dates of remaining of the year
-    for (let i = 0; i < 12 - today.getMonth(); i++) {
+    for (let i = 0; i < 12 - date.getMonth(); i++) {
       // 15th day of the month
       const fifteenthDay = new Date(
-        today.getFullYear(),
-        today.getMonth() + i,
+        date.getFullYear(),
+        date.getMonth() + i,
         15
       );
 
-      // Checks first if 15th of the month is a weekday
+      // Checks if 15th of the month is a weekday
       // If 15th of the month is in the weekend, the bonus day will be on the next wednesday
       const bonusDay = isWeekday(fifteenthDay)
         ? fifteenthDay
@@ -73,7 +71,7 @@ export const calculatePayDates = (salaryType: SalaryType) => {
         : new Date(fifteenthDay.getFullYear(), fifteenthDay.getMonth(), 18);
 
       // If pay date is in the past, the pay date should not be shown
-      bonusDay >= today &&
+      bonusDay >= date &&
         payDates.push({
           bonusDate: bonusDay.getDate(),
           month: getMonthName(new Date(bonusDay!)),

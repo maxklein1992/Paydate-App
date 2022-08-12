@@ -50,7 +50,7 @@ const PayDatesOverview = ({ payDates }: Props) => {
   };
 
   /**
-   * Renders bonus payment date item
+   * Render bonus payment date item
    */
   const renderBonusDateItem = (payDateItem: BonusDate, i: number) => (
     <div
@@ -66,7 +66,7 @@ const PayDatesOverview = ({ payDates }: Props) => {
   );
 
   /**
-   * Renders salary payment date item
+   * Render salary payment date item
    */
   const renderSalaryDateItem = (payDateItem: SalaryDate, i: number) => (
     <div

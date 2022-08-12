@@ -23,8 +23,12 @@ const Home: NextPage = () => {
    * Sets Salary and Bonus dates
    */
   useEffect(() => {
-    setSalaryDates(calculatePayDates(SalaryType.Salary) as SalaryDate[]);
-    setBonusDates(calculatePayDates(SalaryType.Bonus) as BonusDate[]);
+    setSalaryDates(
+      calculatePayDates(new Date(), SalaryType.Salary) as SalaryDate[]
+    );
+    setBonusDates(
+      calculatePayDates(new Date(), SalaryType.Bonus) as BonusDate[]
+    );
   }, []);
 
   /**

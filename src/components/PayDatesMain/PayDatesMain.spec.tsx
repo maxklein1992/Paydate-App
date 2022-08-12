@@ -3,18 +3,19 @@ import React from "react";
 import { render } from "@testing-library/react";
 import PayDatesMain from "./PayDatesMain";
 import type { Props } from "./PayDatesMain.types";
+import { SalaryType } from "./calculatePayDates";
 
 export const mockData: Props = {
   bonusDates: [
     {
       bonusDate: 15,
       month: "November",
-      variant: "salary",
+      variant: SalaryType.Bonus,
     },
     {
       bonusDate: 15,
       month: "December",
-      variant: "salary",
+      variant: SalaryType.Bonus,
     },
   ],
   downloadExcel: "Download Button",
@@ -31,7 +32,7 @@ export const mockData: Props = {
       bonusDate: 15,
       salaryDate: 31,
       month: "December",
-      variant: "salary",
+      variant: "bonus",
     },
   ],
   bonusPaymentDates: "Bonus Payment Dates",
@@ -39,12 +40,12 @@ export const mockData: Props = {
     {
       salaryDate: 31,
       month: "November",
-      variant: "salary",
+      variant: SalaryType.Salary,
     },
     {
       salaryDate: 31,
       month: "December",
-      variant: "salary",
+      variant: SalaryType.Salary,
     },
   ],
   salaryPaymentDates: "Salary Payment Dates",

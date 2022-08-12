@@ -1,4 +1,4 @@
-import getLastDayOfMonth from "@utils/getLastDayOfMonth/getLastDayOfMonth";
+import getLastDayOfMonth from "../../utils/getLastDayOfMonth/getLastDayOfMonth";
 
 /**
  * Checks whether the date is a weekday
