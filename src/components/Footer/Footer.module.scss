@@ -7,6 +7,11 @@
   border-top: pxToRem(2) solid $colorPrimaryWhite;
   position: relative;
   padding: pxToRem(24) 0;
+  margin-top: pxToRem(32);
+
+  @include mediaQuery(m, up) {
+    margin-top: pxToRem(64);
+  }
 
   @include mediaQuery(m, up) {
     padding: pxToRem(54);

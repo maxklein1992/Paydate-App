@@ -15,10 +15,6 @@ const Layout = ({ children }: Props) => {
       <main id="content">
         <Container>{children}</Container>
       </main>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
       <Footer {...footerData}></Footer>
     </div>
   );

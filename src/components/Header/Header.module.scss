@@ -2,6 +2,14 @@
 @import "../../../styles/pxToRem";
 @import "../../../styles/variables";
 
+.container {
+  margin-bottom: pxToRem(32);
+
+  @include mediaQuery(m, up) {
+    margin-bottom: pxToRem(64);
+  }
+}
+
 .title {
   color: $colorPrimaryWhite;
   font-weight: 800;
