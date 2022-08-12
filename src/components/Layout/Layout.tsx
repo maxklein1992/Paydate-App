@@ -6,8 +6,9 @@ import { headerData } from "@components/Header/Header.data";
 import Footer from "@components/Footer/Footer";
 import Header from "@components/Header/Header";
 import styles from "./Layout.module.scss";
+import type { Props } from "./Layout.types";
 
-const Layout = ({ children }: any) => {
+const Layout = ({ children }: Props) => {
   return (
     <div className={styles.container}>
       <Header {...headerData} />

@@ -1,7 +1,8 @@
 /**
  * Returns name of the month
  */
-const monthNames = [
+
+export const monthNames = [
   "January",
   "February",
   "March",

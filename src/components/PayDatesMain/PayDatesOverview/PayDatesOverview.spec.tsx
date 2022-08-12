@@ -3,29 +3,30 @@ import React from "react";
 import userEvent from "@testing-library/user-event";
 
 import PayDatesOverview from "./PayDatesOverview";
-import type { Props } from "./PayDatesOverview.types";
+import { Month, Props } from "./PayDatesOverview.types";
+import { SalaryType } from "../calculatePayDates";
 
 export const mockData: Props = {
   payDates: [
     {
-      month: "September",
+      month: Month.September,
       bonusDate: 15,
-      variant: "bonus",
+      variant: SalaryType.Bonus,
     },
     {
-      month: "October",
+      month: Month.October,
       bonusDate: 15,
-      variant: "bonus",
+      variant: SalaryType.Bonus,
     },
     {
-      month: "November",
+      month: Month.November,
       bonusDate: 15,
-      variant: "bonus",
+      variant: SalaryType.Bonus,
     },
     {
-      month: "December",
+      month: Month.December,
       bonusDate: 15,
-      variant: "bonus",
+      variant: SalaryType.Bonus,
     },
   ],
 };

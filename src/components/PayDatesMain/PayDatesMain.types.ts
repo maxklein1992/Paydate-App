@@ -1,5 +1,6 @@
 import {
   BonusDate,
+  PayDate,
   SalaryDate,
 } from "./PayDatesOverview/PayDatesOverview.types";
 
@@ -27,7 +28,7 @@ export interface Props {
   /**
    * Array of base salary and bonus dates
    */
-  payDates?: (BonusDate | SalaryDate)[] | undefined;
+  payDates?: PayDate[] | undefined;
   /**
    * Array of base salary payment dates
    */

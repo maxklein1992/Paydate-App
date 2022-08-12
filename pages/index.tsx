@@ -9,15 +9,14 @@ import calculatePayDates, {
 } from "@components/PayDatesMain/calculatePayDates";
 import type {
   BonusDate,
+  PayDate,
   SalaryDate,
 } from "@components/PayDatesMain/PayDatesOverview/PayDatesOverview.types";
 
 const Home: NextPage = () => {
   const [salaryDates, setSalaryDates] = useState<SalaryDate[] | undefined>();
   const [bonusDates, setBonusDates] = useState<BonusDate[] | undefined>();
-  const [payDates, setPayDates] = useState<
-    (BonusDate | SalaryDate)[] | undefined
-  >();
+  const [payDates, setPayDates] = useState<PayDate[] | undefined>();
 
   /**
    * Sets Salary and Bonus dates
@@ -44,7 +43,10 @@ const Home: NextPage = () => {
             (bonusItem) => bonusItem.month === salaryItem.month
           ),
         }));
-      setPayDates(combinedPayDates);
+      const removedVariant = combinedPayDates.map(
+        ({ variant, ...otherAttributes }) => otherAttributes
+      );
+      setPayDates(removedVariant as PayDate[]);
     }
   }, [salaryDates, bonusDates]);
 
