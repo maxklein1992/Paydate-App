@@ -11,9 +11,6 @@ const Header = ({ title, description }: Props) => {
         <h1 className={styles.title}>{title}</h1>
         <p className={styles.description}>{description}</p>
       </header>
-      {/* <Button size="small" variant="secondary" onClick={() => alert("Max")}>
-        Test Button
-      </Button> */}
     </Container>
   );
 };
